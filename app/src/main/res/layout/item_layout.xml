@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/corner_dp"
+    android:backgroundTint="#202429"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    android:padding="14dp"
+    app:cardCornerRadius="36dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/second_expanded_l"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            app:el_duration="200"
+            app:el_expanded="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry">
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:drawablePadding="16dp"
+                android:focusable="true"
+                android:fontFamily="@font/rubik"
+                android:foreground="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:hint="@string/add_shortcut"
+                android:padding="4dp"
+                android:paddingEnd="138dp"
+                android:textColorHint="#8D8C8D"
+                app:drawableStartCompat="@drawable/label" />
+
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/time"
+            android:textColor="#80FFFFFF"
+            android:textSize="48sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_not_schedul"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/second_expanded_l" />
+
+
+            <TextView
+                android:id="@+id/tv_not_schedul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik"
+                android:text="@string/not_schedul"
+                android:textColor="#80FFFFFF"
+                android:textSize="16sp"
+                android:visibility="visible"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toTopOf="@id/expanded_l"
+                app:layout_constraintStart_toStartOf="@id/tv_time"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time"/>
+
+
+
+        <ImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/arrow_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/materialSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:checked="false"
+            app:layout_constraintEnd_toEndOf="@+id/iv_arrow"
+            app:layout_constraintTop_toBottomOf="@+id/iv_arrow"
+            app:thumbTint="@color/un_checked_switch"
+            app:trackTint="@color/track_color" />
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/expanded_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:background="#202429"
+            android:visibility="visible"
+            app:el_duration="200"
+            app:el_expanded="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_not_schedul">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent">
+
+
+                <LinearLayout
+                    android:id="@+id/ln_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_monday"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/bg_check_day"
+                        android:padding="3dp"
+                        android:text="П"
+                        android:textAlignment="center"
+                        android:textColor="@color/textview_changable"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_tuesday"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/bg_check_day"
+                        android:padding="3dp"
+                        android:text="В"
+                        android:textAlignment="center"
+                        android:textColor="@color/textview_changable"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_wednesday"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/bg_check_day"
+                        android:padding="3dp"
+                        android:text="С"
+                        android:textAlignment="center"
+                        android:textColor="@color/textview_changable"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_thursday"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/bg_check_day"
+                        android:padding="3dp"
+                        android:text="Ч"
+                        android:textAlignment="center"
+                        android:textColor="@color/textview_changable"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_Friday"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/bg_check_day"
+                        android:padding="3dp"
+                        android:text="П"
+                        android:textAlignment="center"
+                        android:textColor="@color/textview_changable"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_saturday"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/bg_check_day"
+                        android:padding="3dp"
+                        android:text="С"
+                        android:textAlignment="center"
+                        android:textColor="@color/textview_changable"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sunday"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@drawable/bg_check_day"
+                        android:padding="3dp"
+                        android:text="В"
+                        android:textAlignment="center"
+                        android:textColor="@color/textview_changable"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_add_data_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:drawablePadding="16dp"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/set_alarm"
+                    android:textColor="@color/white"
+                    app:drawableEndCompat="@drawable/plus"
+                    app:drawableStartCompat="@drawable/calendar"
+                    app:drawableTint="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/ln_days"
+                    app:layout_constraintStart_toStartOf="@+id/ln_days"
+                    app:layout_constraintTop_toBottomOf="@id/ln_days" />
+
+
+                <TextView
+                    android:id="@+id/tv_notification"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawablePadding="16dp"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:padding="8dp"
+                    android:text="Angel's Feather"
+                    android:textColor="@color/white"
+                    app:drawableStartCompat="@drawable/notification"
+                    app:drawableTint="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_add_data_alarm"
+                    app:layout_constraintStart_toStartOf="@+id/tv_add_data_alarm"
+                    app:layout_constraintTop_toBottomOf="@id/tv_add_data_alarm" />
+
+
+                <TextView
+                    android:id="@+id/tv_vibration"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawablePadding="16dp"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:padding="8dp"
+                    android:text="Angel's Feather"
+                    android:textColor="@color/white"
+                    app:drawableEndCompat="@drawable/unchecked"
+                    app:drawableStartCompat="@drawable/vibration"
+                    app:drawableTint="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_notification"
+                    app:layout_constraintStart_toStartOf="@+id/tv_notification"
+                    app:layout_constraintTop_toBottomOf="@id/tv_notification" />
+
+                <TextView
+                    android:id="@+id/tv_delete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawablePadding="16dp"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/delete"
+                    android:textColor="@color/white"
+                    app:drawableStartCompat="@drawable/delete"
+                    app:drawableTint="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_vibration"
+                    app:layout_constraintStart_toStartOf="@+id/tv_vibration"
+                    app:layout_constraintTop_toBottomOf="@id/tv_vibration" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

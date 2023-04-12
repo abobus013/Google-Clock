@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1B1B"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ClockFragment">
+
+
+        <TextView
+            android:id="@+id/tv_clock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="24sp"
+            android:textAlignment="textStart"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_run_time"
+            android:text="@string/clocks"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/white"
+            app:drawableTint="@color/white"
+            app:drawableEndCompat="@drawable/ic_more_vert" />
+
+    <TextClock
+        android:id="@+id/tv_run_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.0"
+        android:format24Hour="k:mm"
+        android:textSize="81sp"
+        android:text="22:00"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_clock" />
+
+
+    <TextView
+        android:id="@+id/tv_data1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_time"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toEndOf="@id/iv_clock"
+        app:layout_constraintEnd_toEndOf="@+id/tv_run_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_run_time" />
+
+
+    <TextView
+        android:id="@+id/tv_data2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_month"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toStartOf="@id/iv_clock"
+        app:layout_constraintStart_toStartOf="@+id/tv_run_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_run_time" />
+
+
+    <ImageView
+        android:id="@+id/iv_clock"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:src="@drawable/alarm"
+        android:visibility="visible"
+        android:layout_marginHorizontal="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_data1"
+        app:layout_constraintEnd_toStartOf="@+id/tv_data1"
+        app:layout_constraintStart_toEndOf="@+id/tv_data2"
+        app:layout_constraintTop_toTopOf="@id/tv_data1"
+        android:contentDescription="TODO" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rectangle_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginHorizontal="14dp"
+        android:background="@drawable/corner_dp"
+        android:backgroundTint="#202429"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_data2">
+
+        <TextView
+            android:id="@+id/tv_moscow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="@string/moscow"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="-2 ч."
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toStartOf="@id/tv_moscow"
+            app:layout_constraintTop_toBottomOf="@id/tv_moscow" />
+
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/moscow_time"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            android:fontFamily="@font/rubik"
+            
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/ic_add"
+        app:contentPadding="32dp"
+        app:shapeAppearance="@style/RoundedStyle"
+        android:background="#A4C9FE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="TODO" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

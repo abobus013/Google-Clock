@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="bottom_nav_background">#26292E</color>
+    <color name="bottom_nav_item">#FFFFFFFF</color>
+    <color name="bottom_nav_selected_item">#FFFFFFFF</color>
+    <color name="fragment_bg_color" tools:keep="@color/fragment_bg_color">#FDF8F4</color>
+
+
+    <color name="checked_switch">#16487D</color>
+    <color name="un_checked_switch">#D8E3F7</color>
+
+    <color name="statick">#474747</color>
+    <color name="light_top_bar_color">#272A2F</color>
+    <color name="bg_color">#1A1C1E</color>
+    <color name="time_picker_hand_color">#a4c9fe</color>
+
+
+    <color name="unchecked_textview">#202429</color>
+    <color name="checked_textview">#A4C9FE</color>
+
+    <color name="unchecked_textview_word">#919294</color>
+    <color name="checked_textview_word">#093868</color>
+
+    <color name="my_background_color">#292C33</color>
+    <color name="my_text_color">#A5C8FB</color>
+
+</resources>

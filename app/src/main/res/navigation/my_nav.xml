@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/Fragment_alarm">
+
+    <fragment
+        android:id="@+id/Fragment_alarm"
+        android:name="com.example.clock.fragments.AlarmFragment"
+        android:label="fragment_alarm"
+        tools:layout="@layout/fragment_alarm" >
+        <action
+            android:id="@+id/action_alarm_to_clock2"
+            app:destination="@id/Fragment_clock" />
+        <action
+            android:id="@+id/action_alarm_to_hourGlassFragment"
+            app:destination="@id/Fragment_hourglass" />
+        <action
+            android:id="@+id/action_alarm_to_timerFragment"
+            app:destination="@id/Fragment_timer" />
+        <action
+            android:id="@+id/action_alarm_to_sleepModeFragment"
+            app:destination="@id/Fragment_sleepMode" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Fragment_clock"
+        android:name="com.example.clock.fragments.ClockFragment"
+        android:label="@string/label_clock"
+        tools:layout="@layout/fragment_clock" />
+    <fragment
+        android:id="@+id/Fragment_hourglass"
+        android:name="com.example.clock.fragments.HourGlassFragment"
+        android:label="@string/label_hourglass"
+        tools:layout="@layout/fragment_hour_glass" />
+    <fragment
+        android:id="@+id/Fragment_timer"
+        android:name="com.example.clock.fragments.TimerFragment"
+        android:label="@string/label_timer"
+        tools:layout="@layout/fragment_timer" />
+    <fragment
+        android:id="@+id/Fragment_sleepMode"
+        android:name="com.example.clock.fragments.SleepModeFragment"
+        android:label="@string/label_sleep_mode"
+        tools:layout="@layout/fragment_sleep_mode" />
+
+</navigation>

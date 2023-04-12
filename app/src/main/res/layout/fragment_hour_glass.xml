@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1B1B"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HourGlassFragment">
+
+    <TextView
+        android:id="@+id/tv_timer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+        android:textAlignment="textStart"
+        android:padding="8dp"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/hourglass"
+        android:textColor="@color/white"
+        app:drawableTint="@color/white"
+        app:drawableEndCompat="@drawable/ic_more_vert" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_timer">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="0"
+            android:textColor="#BFFFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="0"
+            android:textColor="#BFFFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik"
+            android:text="ч."
+            android:textColor="#BFFFFFFF"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:fontFamily="@font/rubik"
+            android:text="0"
+            android:textColor="#BFFFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="0"
+            android:textColor="#BFFFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik"
+            android:text="м."
+            android:textColor="#BFFFFFFF"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:fontFamily="@font/rubik"
+            android:text="0"
+            android:textColor="#BFFFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:text="0"
+            android:textColor="#BFFFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik"
+            android:text="c."
+            android:textColor="#BFFFFFFF"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/tv_number1"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="1"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number1"
+        app:layout_constraintEnd_toEndOf="@id/tv_number1"
+        app:layout_constraintStart_toStartOf="@id/tv_number1"
+        app:layout_constraintTop_toTopOf="@id/tv_number1"/>
+
+
+    <View
+        android:id="@+id/tv_number2"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_number1"
+        app:layout_constraintEnd_toStartOf="@+id/tv_number3"
+        app:layout_constraintStart_toEndOf="@id/tv_number1"
+        app:layout_constraintTop_toTopOf="@+id/tv_number1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="2"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number2"
+        app:layout_constraintEnd_toEndOf="@id/tv_number2"
+        app:layout_constraintStart_toStartOf="@id/tv_number2"
+        app:layout_constraintTop_toTopOf="@id/tv_number2"/>
+
+
+    <View
+        android:id="@+id/tv_number3"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_number2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_number2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:padding="14dp"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number3"
+        app:layout_constraintEnd_toEndOf="@id/tv_number3"
+        app:layout_constraintStart_toStartOf="@id/tv_number3"
+        app:layout_constraintTop_toTopOf="@id/tv_number3" />
+
+
+    <View
+        android:id="@+id/tv_number4"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintStart_toStartOf="@+id/tv_number1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_number1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="4"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number4"
+        app:layout_constraintEnd_toEndOf="@id/tv_number4"
+        app:layout_constraintStart_toStartOf="@id/tv_number4"
+        app:layout_constraintTop_toTopOf="@id/tv_number4"/>
+
+
+    <View
+        android:id="@+id/tv_number5"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_number4"
+        app:layout_constraintEnd_toStartOf="@+id/tv_number6"
+        app:layout_constraintStart_toEndOf="@id/tv_number4"
+        app:layout_constraintTop_toTopOf="@+id/tv_number4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="5"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number5"
+        app:layout_constraintEnd_toEndOf="@id/tv_number2"
+        app:layout_constraintStart_toStartOf="@id/tv_number5"
+        app:layout_constraintTop_toTopOf="@id/tv_number5"/>
+
+
+    <View
+        android:id="@+id/tv_number6"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_number5"
+        app:layout_constraintEnd_toEndOf="@+id/tv_number3"
+        app:layout_constraintTop_toTopOf="@+id/tv_number5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:padding="14dp"
+        android:text="6"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number6"
+        app:layout_constraintEnd_toEndOf="@id/tv_number6"
+        app:layout_constraintStart_toStartOf="@id/tv_number6"
+        app:layout_constraintTop_toTopOf="@id/tv_number6" />
+
+
+    <View
+        android:id="@+id/tv_number7"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintStart_toStartOf="@+id/tv_number4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_number5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="7"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number7"
+        app:layout_constraintEnd_toEndOf="@id/tv_number7"
+        app:layout_constraintStart_toStartOf="@id/tv_number7"
+        app:layout_constraintTop_toTopOf="@id/tv_number7"/>
+
+
+    <View
+        android:id="@+id/tv_number8"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_number7"
+        app:layout_constraintEnd_toStartOf="@+id/tv_number9"
+        app:layout_constraintStart_toEndOf="@id/tv_number7"
+        app:layout_constraintTop_toTopOf="@+id/tv_number7" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="8"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number8"
+        app:layout_constraintEnd_toEndOf="@id/tv_number8"
+        app:layout_constraintStart_toStartOf="@id/tv_number8"
+        app:layout_constraintTop_toTopOf="@id/tv_number8"/>
+
+
+    <View
+        android:id="@+id/tv_number9"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_number7"
+        app:layout_constraintEnd_toEndOf="@+id/tv_number6"
+        app:layout_constraintTop_toTopOf="@+id/tv_number7" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:padding="14dp"
+        android:text="9"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number9"
+        app:layout_constraintEnd_toEndOf="@id/tv_number9"
+        app:layout_constraintStart_toStartOf="@id/tv_number9"
+        app:layout_constraintTop_toTopOf="@id/tv_number9" />
+
+
+    <View
+        android:id="@+id/tv_number00"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintStart_toStartOf="@+id/tv_number7"
+        app:layout_constraintTop_toBottomOf="@+id/tv_number7" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="00"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number00"
+        app:layout_constraintEnd_toEndOf="@id/tv_number00"
+        app:layout_constraintStart_toStartOf="@id/tv_number00"
+        app:layout_constraintTop_toTopOf="@id/tv_number00"/>
+
+
+    <View
+        android:id="@+id/tv_number0"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintEnd_toStartOf="@id/number_back"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_number00"
+        app:layout_constraintStart_toEndOf="@id/tv_number00"
+        app:layout_constraintTop_toTopOf="@+id/tv_number00" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number0"
+        app:layout_constraintEnd_toEndOf="@id/tv_number0"
+        app:layout_constraintStart_toStartOf="@id/tv_number0"
+        app:layout_constraintTop_toTopOf="@id/tv_number0"/>
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/number_back"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:background="#3E4758"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_backspace"
+        app:contentPadding="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_number00"
+        app:layout_constraintEnd_toEndOf="@+id/tv_number9"
+        app:layout_constraintTop_toTopOf="@+id/tv_number00"
+        app:shapeAppearance="@style/RoundedStyle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:textSize="36sp"
+        android:text="0"
+        android:textColor="@color/white"
+        android:fontFamily="@font/rubik"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number0"
+        app:layout_constraintEnd_toEndOf="@id/tv_number0"
+        app:layout_constraintStart_toStartOf="@id/tv_number0"
+        app:layout_constraintTop_toTopOf="@id/tv_number0"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

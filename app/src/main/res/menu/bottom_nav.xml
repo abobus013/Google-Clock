@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/Fragment_alarm"
+        android:icon="@drawable/alarm"
+        android:title="@string/alarm"
+        tools:targetApi="o" />
+
+    <item android:id="@+id/Fragment_clock"
+        android:icon="@drawable/clock"
+        android:title="@string/clocks"
+        tools:targetApi="o"/>
+
+    <item android:id="@+id/Fragment_hourglass"
+        android:icon="@drawable/hourglass"
+        android:title="@string/hourglass"
+        tools:targetApi="o"/>
+
+    <item android:id="@+id/Fragment_timer"
+        android:icon="@drawable/timer"
+        android:title="@string/timer"
+        tools:targetApi="o"/>
+
+    <item android:id="@+id/Fragment_sleepMode"
+        android:icon="@drawable/bed_hotel"
+        android:title="@string/sleepMode"
+        tools:targetApi="o"/>
+
+</menu>

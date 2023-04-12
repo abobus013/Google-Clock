@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Clock</string>
+    <string name="alarm">Будильник</string>
+    <string name="clocks">Часы</string>
+    <string name="hourglass">Таймер</string>
+    <string name="timer">Секундо..</string>
+    <string name="sleepMode">Режим сна</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_alarm">Будильник</string>
+    <string name="not_schedul">Не установлен</string>
+    <string name="am">AM</string>
+    <string name="tv_clock">Часы</string>
+    <string name="moscow">Москва</string>
+    <string name="set_alarm">Установить буд.</string>
+    <string name="delete">Удалить</string>
+    <string name="label_clock">Clock</string>
+    <string name="label_hourglass">Hourglass</string>
+    <string name="label_timer">Timer</string>
+    <string name="label_sleep_mode">SleepMode</string>
+    <string name="sleep_mode">Режим Сна</string>
+    <string name="start">Начать</string>
+    <string name="data_month">сб.1 апр.</string>
+    <string name="data_time">сб.21:00</string>
+
+
+    <string name="time">6:30</string>
+    <string name="clock_time">15:48</string>
+    <string name="moscow_time">13:48</string>
+
+    <string name="choose_a_re">
+Настройте режим сна, отдыхайте от                        устройств и слушайте успакаивающи звуки.
+</string>
+    <string name="фвв">Добавить ярлык</string>
+    <string name="add_shortcut">Добавить ярлык</string>
+    <string name="monday">Пн,</string>
+    <string name="Tuesday">Вт,</string>
+    <string name="Wednesday">Ср,</string>
+    <string name="Thursday">Чт,</string>
+    <string name="Friday">Пт,</string>
+    <string name="Saturday">Сб</string>
+    <string name="All_days">Каждый день</string>
+    <string name="description">Описание</string>
+
+</resources>
