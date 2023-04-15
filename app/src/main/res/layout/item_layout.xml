@@ -113,7 +113,7 @@
             android:background="#202429"
             android:visibility="visible"
             app:el_duration="200"
-            app:el_expanded="false"
+            app:el_expanded="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +147,7 @@
                         android:padding="3dp"
                         android:text="П"
                         android:textAlignment="center"
-                        android:textColor="@color/textview_changable"
+                        android:textColor="@color/textview_changeble"
                         android:textSize="16sp" />
 
                     <TextView
@@ -159,7 +159,7 @@
                         android:padding="3dp"
                         android:text="В"
                         android:textAlignment="center"
-                        android:textColor="@color/textview_changable"
+                        android:textColor="@color/textview_changeble"
                         android:textSize="16sp" />
 
                     <TextView
@@ -171,7 +171,7 @@
                         android:padding="3dp"
                         android:text="С"
                         android:textAlignment="center"
-                        android:textColor="@color/textview_changable"
+                        android:textColor="@color/textview_changeble"
                         android:textSize="16sp" />
 
                     <TextView
@@ -183,7 +183,7 @@
                         android:padding="3dp"
                         android:text="Ч"
                         android:textAlignment="center"
-                        android:textColor="@color/textview_changable"
+                        android:textColor="@color/textview_changeble"
                         android:textSize="16sp" />
 
                     <TextView
@@ -195,7 +195,7 @@
                         android:padding="3dp"
                         android:text="П"
                         android:textAlignment="center"
-                        android:textColor="@color/textview_changable"
+                        android:textColor="@color/textview_changeble"
                         android:textSize="16sp" />
 
                     <TextView
@@ -207,7 +207,7 @@
                         android:padding="3dp"
                         android:text="С"
                         android:textAlignment="center"
-                        android:textColor="@color/textview_changable"
+                        android:textColor="@color/textview_changeble"
                         android:textSize="16sp" />
 
                     <TextView
@@ -219,7 +219,7 @@
                         android:padding="3dp"
                         android:text="В"
                         android:textAlignment="center"
-                        android:textColor="@color/textview_changable"
+                        android:textColor="@color/textview_changeble"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -229,7 +229,7 @@
                     android:id="@+id/tv_add_data_alarm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="6dp"
                     android:clickable="true"
                     android:drawablePadding="16dp"
                     android:focusable="true"
@@ -251,6 +251,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:layout_marginTop="6dp"
                     android:drawablePadding="16dp"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
@@ -270,6 +271,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:layout_marginTop="6dp"
                     android:drawablePadding="16dp"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
@@ -289,6 +291,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:layout_marginTop="6dp"
                     android:drawablePadding="16dp"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"

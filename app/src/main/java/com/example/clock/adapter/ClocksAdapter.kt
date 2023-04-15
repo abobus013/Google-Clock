@@ -24,6 +24,10 @@ class ClocksAdapter(
 
 
 
+    fun setOnDescriptionClickListener(block: (ItemLayoutBinding) -> Unit) {
+        onDescriptionClickListener = block
+    }
+
     fun setOnDeleteClickListener(block: (ClockData) -> Unit) {
         onDeleteClickListener = block
     }
@@ -37,15 +41,12 @@ class ClocksAdapter(
         onDatPickerClickListener = block
     }
 
-    fun setOnDescriptionClickListener(block: (ItemLayoutBinding) -> Unit) {
-        onDescriptionClickListener = block
-    }
+
 
 
     fun setOnDayClickListener(block: (ClockData) -> Unit) {
         onDayClickListener = block
     }
-
 
 
 
@@ -57,36 +58,10 @@ class ClocksAdapter(
             val clockData = models[adapterPosition]
             binding.tvTime.text = clockData.time
 
+            daysToTextView(clockData,binding)
 
-            @SuppressLint("SetTextI18n")
-            fun daysToTextView(alarmData: ClockData) {
-                val isActivatedDaysList = booleanArrayOf(alarmData.monday, alarmData.tuesday,
-                    alarmData.wednesday, alarmData.thursday, alarmData.friday,
-                    alarmData.saturday, alarmData.sunday
-                )
-                val weekDays = listOf("Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье")
-                val shortWeekDays = listOf("пн", "вт", "ср", "чт", "пт", "сб", "вс")
-                var oneDay = ""
-                val selectedDays = mutableListOf<String>()
-                for (i in isActivatedDaysList.indices) {
-                    if (isActivatedDaysList[i]) {
-                        selectedDays.add(shortWeekDays[i])
-                        oneDay = weekDays[i]
-                    }
-                }
-                if (selectedDays.size == 7) {
-                    binding.tvNotSchedul.text = "Каждый день"
-                } else if (selectedDays.size == 1) {
-                    binding.tvNotSchedul.text = oneDay
-                } else if (selectedDays.isEmpty()) {
-                    binding.tvNotSchedul.text = "Не установлен"
-                } else {
-                    val lastIndex = selectedDays.toString().length - 1
-                    val daySubstring = selectedDays.toString().substring(1, 2)
-                        .uppercase() + selectedDays.toString().substring(2, lastIndex)
-                    binding.tvNotSchedul.text = daySubstring
-                }
-            }
+
+
 
 
             binding.tvDescription.setOnClickListener {
@@ -150,7 +125,7 @@ class ClocksAdapter(
                 binding.tvMonday.isSelected = clockData.monday.not()
                 clockData.monday = clockData.monday.not()
                 onDayClickListener?.invoke(clockData)
-                daysToTextView(clockData)
+                daysToTextView(clockData,binding)
 
             }
 
@@ -160,35 +135,35 @@ class ClocksAdapter(
                 binding.tvTuesday.isSelected = clockData.tuesday.not()
                 clockData.tuesday = clockData.tuesday.not()
                 onDayClickListener?.invoke(clockData)
-                daysToTextView(clockData)
+                daysToTextView(clockData,binding)
             }
 
             binding.tvWednesday.setOnClickListener {
                 binding.tvWednesday.isSelected = clockData.wednesday.not()
                 clockData.wednesday = clockData.wednesday.not()
                 onDayClickListener?.invoke(clockData)
-                daysToTextView(clockData)
+                daysToTextView(clockData,binding)
             }
 
             binding.tvThursday.setOnClickListener {
                 binding.tvThursday.isSelected = clockData.thursday.not()
                 clockData.thursday = clockData.thursday.not()
                 onDayClickListener?.invoke(clockData)
-                daysToTextView(clockData)
+                daysToTextView(clockData,binding)
             }
 
             binding.tvFriday.setOnClickListener {
                 binding.tvFriday.isSelected = clockData.friday.not()
                 clockData.friday = clockData.friday.not()
                 onDayClickListener?.invoke(clockData)
-                daysToTextView(clockData)
+                daysToTextView(clockData,binding)
             }
 
             binding.tvSaturday.setOnClickListener {
                 binding.tvSaturday.isSelected = clockData.saturday.not()
                 clockData.saturday = clockData.saturday.not()
                 onDayClickListener?.invoke(clockData)
-                daysToTextView(clockData)
+                daysToTextView(clockData,binding)
             }
 
 
@@ -196,7 +171,7 @@ class ClocksAdapter(
                 binding.tvSunday.isSelected = clockData.sunday.not()
                 clockData.sunday = clockData.sunday.not()
                 onDayClickListener?.invoke(clockData)
-                daysToTextView(clockData)
+                daysToTextView(clockData,binding)
             }
 
 
@@ -225,6 +200,36 @@ class ClocksAdapter(
 
     override fun onBindViewHolder(holder: ClockViewHolder, position: Int) {
         holder.bind()
+    }
+
+    @SuppressLint("SetTextI18n")
+    fun daysToTextView(alarmData: ClockData, binding: ItemLayoutBinding) {
+        val isActivatedDaysList = booleanArrayOf(alarmData.monday, alarmData.tuesday,
+            alarmData.wednesday, alarmData.thursday, alarmData.friday,
+            alarmData.saturday, alarmData.sunday
+        )
+        val weekDays = listOf("Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье")
+        val shortWeekDays = listOf("пн", "вт", "ср", "чт", "пт", "сб", "вс")
+        var oneDay = ""
+        val selectedDays = mutableListOf<String>()
+        for (i in isActivatedDaysList.indices) {
+            if (isActivatedDaysList[i]) {
+                selectedDays.add(shortWeekDays[i])
+                oneDay = weekDays[i]
+            }
+        }
+        if (selectedDays.size == 7) {
+            binding.tvNotSchedul.text = "Каждый день"
+        } else if (selectedDays.size == 1) {
+            binding.tvNotSchedul.text = oneDay
+        } else if (selectedDays.isEmpty()) {
+            binding.tvNotSchedul.text = "Не установлен"
+        } else {
+            val lastIndex = selectedDays.toString().length - 1
+            val daySubstring = selectedDays.toString().substring(1, 2)
+                .uppercase() + selectedDays.toString().substring(2, lastIndex)
+            binding.tvNotSchedul.text = daySubstring
+        }
     }
 
 }

@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +19,7 @@ import com.example.clock.data.ClocksDao
 import com.example.clock.databinding.FragmentAlarmBinding
 import com.example.clock.adapter.ClocksAdapter
 import com.example.clock.data.DataBase
-import com.example.clock.databinding.FragmentLayoutDialogBinding
+import com.example.clock.databinding.DialogEditDescriptionBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.timepicker.MaterialTimePicker
@@ -136,38 +138,43 @@ class AlarmFragment : Fragment(R.layout.fragment_alarm) {
             }
         }
 
-        adapter.setOnDescriptionClickListener {
+        adapter.setOnDescriptionClickListener { itemBinding ->
+            lifecycleScope.launch {
 
-            val dialogBinding = FragmentLayoutDialogBinding.inflate(layoutInflater)
+                val dialogBinding = DialogEditDescriptionBinding.inflate(layoutInflater)
 
+                val builder = MaterialAlertDialogBuilder(
+                    requireContext(),
+                    R.style.ThemeOverlay_App_MaterialAlertDialog
+                )
 
-            val builder = MaterialAlertDialogBuilder(
-                requireContext(),
-                R.style.ThemeOverlay_App_MaterialAlertDialog
-            )
-            builder.setTitle("")
-                .setView(dialogBinding.root)
-                .setMessage("")
-                .setBackground(ContextCompat.getDrawable(requireContext(), R.drawable.dialog_bg))
+                builder
+                    .setView(dialogBinding.root)
+                    .setBackground(
+                        ContextCompat.getDrawable(
+                            requireContext(),
+                            R.drawable.dialog_bg
+                        )
+                    )
+                    .setPositiveButton("ОК") { dialog, _ ->
+                        Log.d("TTTTT", " Текст сохраняется")
+                        itemBinding.tvDescription.setText(dialogBinding.edEditText.text.toString())
+                    }.setNegativeButton("Отмена") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    .create()
 
-                .setPositiveButton("ОК") { _, _ ->
-                    Log.d("TTTTT", "$builder Текст сохраняется")
-                    dialogBinding.edEditText.setText(it.tvDescription?.toString())
+                val dialog = builder.create()
+                dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+                dialogBinding.edEditText.setText(itemBinding.tvDescription.text.toString())
+                dialogBinding.lEdittext.showKeyboard()
 
-                }.setNegativeButton("Отмена") { dialog, _ ->
-                    // Respond to negative button press
-                    dialog.dismiss()
+                dialog.setOnDismissListener {
+                    hideKeyboard(dialogBinding.edEditText)
                 }
-                .create()
-
-            dialogBinding.edEditText.requestFocus()
-            showKeyboard(dialogBinding.edEditText)
-
-            builder.setOnDismissListener {
-                hideKeyboard(dialogBinding.edEditText )
+                dialog.show()
             }
 
-            builder.show()
 
         }
 
@@ -235,12 +242,17 @@ class AlarmFragment : Fragment(R.layout.fragment_alarm) {
 
     }
 
-    private fun showKeyboard(view: View) {
-        view.post {
-            getInputMethodManager(view).showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
-        }
-    }
 
+    fun Context.showKeyboard(editText: EditText) {
+        val inputMethodManager: InputMethodManager =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.toggleSoftInputFromWindow(
+            editText.applicationWindowToken,
+            InputMethodManager.SHOW_IMPLICIT, 0
+        )
+        editText.requestFocus()
+        editText.setSelection(editText.text.length)
+    }
     private fun hideKeyboard(view: View) {
         getInputMethodManager(view).hideSoftInputFromWindow(view.windowToken, 0)
     }
@@ -248,6 +260,15 @@ class AlarmFragment : Fragment(R.layout.fragment_alarm) {
     private fun getInputMethodManager(view: View): InputMethodManager {
         val context = view.context
         return context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    }
+
+    fun View.showKeyboard(
+    ) {
+        isFocusable = true
+        requestFocus()
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as
+                InputMethodManager
+        imm.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
     }
 
 
