@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragments_background"
+    tools:context=".notifications.AlarmActivity">
+
+    <TextView
+        android:id="@+id/tv_alarm_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:letterSpacing="0.05"
+        android:textColor="@color/white"
+        android:textSize="108sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55"
+       android:text="14:00" />
+
+
+    <TextView
+        android:id="@+id/tv_alarm_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_alarm_time"
+        app:layout_constraintStart_toStartOf="@+id/tv_alarm_time"
+        app:layout_constraintTop_toBottomOf="@+id/tv_alarm_time"
+        android:text="Пора просыпаться"
+        android:textSize="24sp" />
+
+    <View
+        android:id="@+id/bg_slider"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_rect_64"
+        android:backgroundTint="@color/my_background_color"
+        app:layout_constraintTop_toBottomOf="@+id/tv_alarm_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="16dp"/>
+
+
+    <View
+        android:id="@+id/view_ic_turnoff"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/bg_slider"
+        app:layout_constraintEnd_toEndOf="@id/bg_slider"
+        app:layout_constraintTop_toTopOf="@id/bg_slider"
+        app:layout_constraintBottom_toBottomOf="@id/bg_slider"
+        android:padding="8sp"
+        android:background="@drawable/bg_rect_64"
+        android:backgroundTint="@color/slider_image_bg_color"
+        android:layout_marginVertical="8dp"
+        app:layout_constraintDimensionRatio="1.5:1"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_turn_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/bg_slider"
+        app:layout_constraintEnd_toEndOf="@id/bg_slider"
+        app:layout_constraintTop_toTopOf="@id/bg_slider"
+        app:layout_constraintBottom_toBottomOf="@id/bg_slider"
+        android:background="@drawable/alarm"
+        android:translationZ="18dp"
+        android:padding="18dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/bg_slider"
+        app:layout_constraintEnd_toStartOf="@id/view_ic_turnoff"
+        app:layout_constraintTop_toTopOf="@id/bg_slider"
+        app:layout_constraintBottom_toBottomOf="@id/bg_slider"
+        android:text="@string/put_aside"
+        android:fontFamily="@font/rubik"
+        android:textSize="18sp"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/view_ic_turnoff"
+        app:layout_constraintEnd_toEndOf="@id/bg_slider"
+        app:layout_constraintTop_toTopOf="@id/bg_slider"
+        app:layout_constraintBottom_toBottomOf="@id/bg_slider"
+        android:text="@string/turn_off"
+        android:fontFamily="@font/rubik"
+        android:textSize="18sp"
+        android:textColor="@color/white"/>
+
+    <View
+        android:id="@+id/bg_animation_put_aside"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_rect_64"
+        android:backgroundTint="@color/slider_image_bg_color"
+        app:layout_constraintTop_toTopOf="@id/view_ic_turnoff"
+        app:layout_constraintBottom_toBottomOf="@id/view_ic_turnoff"
+        app:layout_constraintStart_toStartOf="@id/bg_slider"
+        app:layout_constraintEnd_toEndOf="@id/view_ic_turnoff"
+        android:alpha="0.5"
+        android:visibility="invisible"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"/>
+
+
+    <View
+        android:id="@+id/bg_animation_turn_off"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_rect_64"
+        android:backgroundTint="@color/slider_image_bg_color"
+        app:layout_constraintTop_toTopOf="@id/view_ic_turnoff"
+        app:layout_constraintBottom_toBottomOf="@id/view_ic_turnoff"
+        app:layout_constraintStart_toStartOf="@id/view_ic_turnoff"
+        app:layout_constraintEnd_toEndOf="@id/bg_slider"
+        android:alpha="0.5"
+        android:layout_marginStart="32dp"
+        android:visibility="invisible"
+        android:layout_marginEnd="8dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

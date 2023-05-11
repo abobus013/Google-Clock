@@ -41,5 +41,10 @@
     <string name="Saturday">Сб</string>
     <string name="All_days">Каждый день</string>
     <string name="description">Описание</string>
+    <string name="search_cities">Поиск города</string>
+    <string name="put_aside">Отложить</string>
+    <string name="turn_off">выключить</string>
+    <string name="tv_watch">Часы</string>
+    <string name="mvvm">Экзамен по MVVM</string>
 
 </resources>

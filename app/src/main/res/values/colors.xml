@@ -33,4 +33,12 @@
     <color name="my_background_color">#292C33</color>
     <color name="my_text_color">#A5C8FB</color>
 
+    <color name="fragments_background">#1B1B1B</color>
+
+    <color name="grey_colour">#8F8F8F</color>
+
+    <color name="slider_image_bg_color">#0F4A74</color>
+
+    <color name="notification_color">#16487D</color>
+
 </resources>

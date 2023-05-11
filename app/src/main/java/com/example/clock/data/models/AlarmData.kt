@@ -1,10 +1,10 @@
-package com.example.clock.data
+package com.example.clock.data.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "clock")
-data class ClockData(
+@Entity(tableName = "alarm")
+data class AlarmData(
     @PrimaryKey(autoGenerate = true) val id: Int,
     val time: String,
     var monday: Boolean = false,
@@ -14,6 +14,5 @@ data class ClockData(
     var friday: Boolean = false,
     var saturday: Boolean = false,
     var sunday: Boolean = false,
-
-
+    val label: String,
 )

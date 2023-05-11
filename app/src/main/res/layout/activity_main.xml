@@ -11,6 +11,7 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/bg_color"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav_bar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,16 +23,16 @@
         android:id="@+id/bottom_nav_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav"
-        app:labelVisibilityMode="labeled"
-        app:itemActiveIndicatorStyle="@style/myActivityIndicatorColor"
         android:background="@color/bottom_nav_background"
+        app:itemActiveIndicatorStyle="@style/myActivityIndicatorColor"
         app:itemIconTint="@drawable/bottom_nav_ripple_color"
         app:itemTextColor="@drawable/bottom_nav_ripple_color"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment_container"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_container"
+        app:menu="@menu/bottom_nav" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

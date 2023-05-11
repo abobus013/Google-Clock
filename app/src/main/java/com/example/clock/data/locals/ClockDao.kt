@@ -1,11 +1,12 @@
-package com.example.clock.data
+package com.example.clock.data.locals
 
 import androidx.room.*
+import com.example.clock.data.models.ClockData
 
 @Dao
-interface ClocksDao {
+interface ClockDao {
 
-    @Query("SELECT * FROM clock")
+    @Query("SELECT * FROM table_clock")
     suspend fun getListOfClocks(): List<ClockData>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -14,11 +15,10 @@ interface ClocksDao {
     @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateClocks(clockData: ClockData)
 
-    @Query("SELECT * FROM clock WHERE id=:id")
+    @Query("SELECT * FROM table_clock WHERE id=:id")
     suspend fun getClocksById(id: Int): ClockData
 
     @Delete
     suspend fun deleteClock(clockData: ClockData)
-
 
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/Fragment_alarm"
-        android:name="com.example.clock.fragments.AlarmFragment"
+        android:name="com.example.clock.ui.alarm.AlarmFragment"
         android:label="fragment_alarm"
         tools:layout="@layout/fragment_alarm" >
         <action
@@ -26,23 +26,32 @@
 
     <fragment
         android:id="@+id/Fragment_clock"
-        android:name="com.example.clock.fragments.ClockFragment"
+        android:name="com.example.clock.ui.clock.ClockFragment"
         android:label="@string/label_clock"
-        tools:layout="@layout/fragment_clock" />
+        tools:layout="@layout/fragment_clock" >
+        <action
+            android:id="@+id/action_Fragment_clock_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
+    </fragment>
     <fragment
         android:id="@+id/Fragment_hourglass"
-        android:name="com.example.clock.fragments.HourGlassFragment"
+        android:name="com.example.clock.ui.hourglass.HourGlassFragment"
         android:label="@string/label_hourglass"
         tools:layout="@layout/fragment_hour_glass" />
     <fragment
         android:id="@+id/Fragment_timer"
-        android:name="com.example.clock.fragments.TimerFragment"
+        android:name="com.example.clock.ui.timer.TimerFragment"
         android:label="@string/label_timer"
         tools:layout="@layout/fragment_timer" />
     <fragment
         android:id="@+id/Fragment_sleepMode"
-        android:name="com.example.clock.fragments.SleepModeFragment"
+        android:name="com.example.clock.ui.sleepmode.SleepModeFragment"
         android:label="@string/label_sleep_mode"
         tools:layout="@layout/fragment_sleep_mode" />
+    <fragment
+        android:id="@+id/dialogFragment"
+        android:name="com.example.clock.ui.clock.add_time.SearchCountriesFragment"
+        android:label="fragment_dialog"
+        tools:layout="@layout/fragment_search_countries" />
 
 </navigation>

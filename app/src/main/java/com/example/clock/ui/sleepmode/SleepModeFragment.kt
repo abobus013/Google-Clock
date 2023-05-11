@@ -1,4 +1,4 @@
-package com.example.clock.fragments
+package com.example.clock.ui.sleepmode
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
